@@ -57,7 +57,7 @@ func PostHandler(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, "Error reading request body",
 				http.StatusInternalServerError)
 		}
-		log.Println(body)
+		log.Println(string(body))
 		results = append(results, string(body))
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusCreated)
